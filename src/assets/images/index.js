@@ -1,0 +1,12 @@
+export { default as logo } from "./logo.svg";
+export { default as brandpattern } from "./brand-pattern.svg";
+export { default as brandpattern2 } from "./brand-pattern2.svg";
+export { default as carhero } from "./car-hero.png";
+export { default as hondacivic } from "./Honda-civic.png";
+export { default as patternsingle } from "./pattern-single.svg";
+export { default as righteligibility } from "./right-eligibility.png";
+export { default as slide1 } from "./slide1.png";
+export { default as toyotacam03 } from "./toyota-cam-03.png";
+export { default as toyotacorolla } from "./toyota-corolla.png";
+export { default as toyotamatrix } from "./toyota-matrix.png";
+export { default as hashdynamic } from "./hash-dynamic-color.png";
