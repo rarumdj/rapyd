@@ -1,5 +1,5 @@
 import React from "react";
-import { hashdynamic } from "../assets/images";
+import { hashdynamic } from "../../assets/images";
 
 const Contact = () => {
   return (

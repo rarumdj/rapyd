@@ -6,6 +6,7 @@ module.exports = {
         ourCar: "url(assets/images/brand-pattern.svg)",
         Contact: "url(assets/images/brand-pattern2.svg)",
         ContactSm: "url(assets/images/contact-mobile-bg.svg)",
+        Onboarding: "url(assets/images/Onboarding-SideAd.jpg)",
       },
     },
   },

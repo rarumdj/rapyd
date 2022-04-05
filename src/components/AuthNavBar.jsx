@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import { logo } from "../assets/images";
+import { logo, logoBlue } from "../assets/images";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const AuthNavBar = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => {
@@ -34,49 +34,36 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-blue-700 py-4 px-6 lg:py-4 lg:px-16 fixed top-0 left-0 right-0 z-50">
+    <header className="lg:bg-transparent bg-white py-4 px-6 lg:py-4 lg:px-16 lg:static fixed top-0 w-full z-50 ">
       <nav className="flex flex-row justify-between items-center">
         <div className="z-50">
-          <img src={logo} alt="" />
+          <img
+            src={logoBlue}
+            alt="logo"
+            className="object-scale-down lg:w-full w-20 "
+          />
         </div>
         <div>
           <button
-            className="-translate-y-4 -translate-x-8 md:hidden block absolute z-50"
+            className="-translate-y-4 -translate-x-8 lg:hidden block absolute z-50"
             onClick={handleClick}
           >
             <Icon
               icon={click ? "ep:close" : "charm:menu-hamburger"}
               fontSize={30}
-              color="fff"
+              className="text-gray-600 invert"
             />
           </button>
           <aside>
-            <nav className="md:flex hidden lg:space-x-36 space-x-8">
-              <ul className="flex flex-row space-x-8 items-center text-white font-semibold lg:text-base text-sm">
-                <li>About us</li>
-                <li>Contact</li>
-                <li>Testimonial</li>
-                <li>Our Cars</li>
-              </ul>
-              <ul className="flex flex-row space-x-4 items-center lg:text-base text-sm">
-                <li className=" h-11 px-6 flex items-center rounded-lg border-2 text-white font-semibold">
-                  <Link to="/login">Login</Link>
-                </li>
-                <li className="h-11 px-6 flex items-center rounded-lg text-center bg-white text-blue-700 font-semibold">
-                  <Link to="/register">Get Started</Link>
-                </li>
-              </ul>
-            </nav>
-
             <motion.nav
               initial={false}
               animate={click ? "open" : "closed"}
               variants={variants}
-              className={`md:hidden block bg-blue-700 absolute top-0 left-0 right-0 bottom-0 min-h-screen`}
+              className={`lg:hidden block bg-blue-700 absolute top-0 left-0 right-0 bottom-0 min-h-screen`}
             >
               <div className="flex flex-col justify-center h-full items-center min-w-full px-8">
                 <div className="space-y-16 w-full max-w-md">
-                  <ul className="flex flex-col space-y-10 items-center text-white font-semibold ">
+                  <ul className="flex flex-col space-y-10 items-center text-white font-semibold">
                     <li>About us</li>
                     <li>Contact</li>
                     <li>Testimonial</li>
@@ -100,4 +87,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default AuthNavBar;
