@@ -3,8 +3,8 @@ import { righteligibility } from "../../assets/images";
 
 const Eligibility = () => {
   return (
-    <section className="py-24 px-6 lg:px-16">
-      <div className="flex md:flex-row flex-col gap-8">
+    <section className="py-24 px-6 lg:px-16 flex justify-center">
+      <div className="flex md:flex-row flex-col gap-8 w-screen max-w-[100rem]">
         <div className="basis-1/2">
           <h1 className="text-4xl font-extrabold mb-6">Eligibility</h1>
           <p className="mb-4">
@@ -57,7 +57,7 @@ const Eligibility = () => {
           </div>
           <p>Please visit the <a href="/" className="text-blue-700 underline font-bold">FAQ</a> page to get more information…</p>
         </div>
-        <div className="basis-1/2 mt-8">
+        <div className="ml-auto mt-8">
           <img src={righteligibility} alt="hero_banner" className="" />
         </div>
       </div>

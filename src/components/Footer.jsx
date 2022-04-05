@@ -4,8 +4,8 @@ import { logo } from "../assets/images";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-700 py-12 px-6 lg:px-16">
-      <div className="flex md:flex-row flex-col justify-between md:items-center md:space-y-0 space-y-4">
+    <footer className="bg-blue-700 py-12 px-6 lg:px-16 flex justify-center">
+      <div className="flex md:flex-row flex-col justify-between md:items-center md:space-y-0 space-y-4 w-screen max-w-[100rem]">
         <div className="space-y-2">
           <img src={logo} alt="" />
           <p className="text-white md:text-base text-sm">©2020 Rapyd</p>

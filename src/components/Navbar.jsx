@@ -34,8 +34,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-blue-700 py-4 px-6 lg:py-4 lg:px-16 fixed top-0 left-0 right-0 z-50">
-      <nav className="flex flex-row justify-between items-center">
+    <header className="bg-blue-700 py-4 px-6 lg:py-4 lg:px-16 fixed top-0 left-0 right-0 z-50 flex justify-center">
+      <nav className="flex flex-row justify-between items-center w-screen max-w-[110rem]">
         <div className="z-50">
           <img src={logo} alt="" />
         </div>
@@ -53,10 +53,18 @@ const Navbar = () => {
           <aside>
             <nav className="md:flex hidden lg:space-x-36 space-x-8">
               <ul className="flex flex-row space-x-8 items-center text-white font-semibold lg:text-base text-sm">
-                <li>About us</li>
-                <li>Contact</li>
-                <li>Testimonial</li>
-                <li>Our Cars</li>
+                <li>
+                  <a href="/">About us</a>
+                </li>
+                <li>
+                  <a href="/">Contact</a>
+                </li>
+                <li>
+                  <a href="/">Testimonial</a>
+                </li>
+                <li>
+                  <a href="/">Our Cars</a>
+                </li>
               </ul>
               <ul className="flex flex-row space-x-4 items-center lg:text-base text-sm">
                 <li className=" h-11 px-6 flex items-center rounded-lg border-2 text-white font-semibold">
@@ -77,10 +85,18 @@ const Navbar = () => {
               <div className="flex flex-col justify-center h-full items-center min-w-full px-8">
                 <div className="space-y-16 w-full max-w-md">
                   <ul className="flex flex-col space-y-10 items-center text-white font-semibold ">
-                    <li>About us</li>
-                    <li>Contact</li>
-                    <li>Testimonial</li>
-                    <li>Our Cars</li>
+                    <li>
+                      <a href="/">About us</a>
+                    </li>
+                    <li>
+                      <a href="/">Contact</a>
+                    </li>
+                    <li>
+                      <a href="/">Testimonial</a>
+                    </li>
+                    <li>
+                      <a href="/">Our Cars</a>
+                    </li>
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
                     <li className="h-11 w-full flex justify-center items-center rounded-lg border-2 text-white">

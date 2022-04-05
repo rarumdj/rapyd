@@ -14,27 +14,37 @@ import Policy from "./pages/Policy";
 import Faqs from "./pages/Faqs";
 
 function App() {
+  const DefaultRoutes = () => {
+    return (
+      <div>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/*" element={<Home />}></Route>
+            <Route path="/terms" element={<Terms />}></Route>
+            <Route path="/policy" element={<Policy />}></Route>
+            <Route path="/faqs" element={<Faqs />}></Route>
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    );
+  };
+
   return (
     <div className="App">
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
-          <Route
-            path="/forgot-password/sucess"
-            element={<CompleteForgotPassword />}
-          ></Route>
-          <Route path="/password-reset" element={<ResetPassword />}></Route>
-          <Route path="/verify-email" element={<VerifyEmail />}></Route>
-          <Route path="/terms" element={<Terms />}></Route>
-          <Route path="/policy" element={<Policy />}></Route>
-          <Route path="/faqs" element={<Faqs />}></Route>
-        </Routes>
-      </main>
-      <Footer />
+      <Routes>
+        <Route path="/*" element={<DefaultRoutes />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+        <Route
+          path="/forgot-password/sucess"
+          element={<CompleteForgotPassword />}
+        ></Route>
+        <Route path="/password-reset" element={<ResetPassword />}></Route>
+        <Route path="/verify-email" element={<VerifyEmail />}></Route>
+      </Routes>
     </div>
   );
 }

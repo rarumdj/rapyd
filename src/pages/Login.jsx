@@ -56,7 +56,7 @@ const Login = () => {
                         icon={"carbon:view-filled"}
                         fontSize={20}
                         color="000"
-                        className="absolute top-0 right-0 bottom-0 m-3"
+                        className="absolute inset-y-0 right-0 m-3"
                       />
                     </fieldset>
                   </div>

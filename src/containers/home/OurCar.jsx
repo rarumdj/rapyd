@@ -8,8 +8,8 @@ import {
 
 const OurCar = () => {
   return (
-    <section className="bg-ourCar bg-[#04112C] md:bg-contain bg-auto min-h-screen py-16 px-6 lg:px-16">
-      <div className="flex md:flex-row flex-col gap-6">
+    <section className="bg-ourCar bg-[#04112C] md:bg-contain bg-auto min-h-screen py-16 px-6 lg:px-16 flex justify-center">
+      <div className="flex md:flex-row flex-col gap-6 w-screen max-w-[100rem]">
         <div className="basis-1/3">
           <div className="h-[48%] w-full bg-gray-700 border-b-8 border-blue-700 shadow-lg shadow-blue-700/60 px-10 py-6 flex flex-col justify-center">
             <h1 className="md:text-4xl text-2xl font-extrabold text-white mb-6">Our Cars</h1>
