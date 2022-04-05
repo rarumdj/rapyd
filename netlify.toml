@@ -6,12 +6,12 @@
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
-  #[[redirects]]
-  #  from = "/rapyddev/*"
-  # to = "https://rapyddev.netlify.app"
-  # status = 200
-  # force = true
-  # headers = {X-From = "Netlify"}
+  [[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
+   force = true
+   headers = {X-From = "Netlify"}
 
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
