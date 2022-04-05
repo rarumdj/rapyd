@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import { logoBlue, MailPng } from "../assets/images";
+import { MailPng } from "../assets/images";
 import AuthNavBar from "../components/AuthNavBar";
 
 const VerifyEmail = () => {

@@ -1,6 +1,5 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import { logoBlue } from "../assets/images";
 import AuthNavBar from "../components/AuthNavBar";
 
 const Register = () => {

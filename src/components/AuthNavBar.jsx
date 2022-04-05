@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import { logo, logoBlue } from "../assets/images";
+import {logoBlue } from "../assets/images";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 

@@ -1,6 +1,5 @@
 import React from "react";
-import { Icon } from "@iconify/react";
-import { logoBlue, Thumbsup } from "../assets/images";
+import { Thumbsup } from "../assets/images";
 import AuthNavBar from "../components/AuthNavBar";
 
 const CompleteForgotPassword = () => {

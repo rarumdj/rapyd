@@ -11,6 +11,7 @@ import CompleteForgotPassword from "./pages/CompleteForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Terms from "./pages/Terms";
 import Policy from "./pages/Policy";
+import Faqs from "./pages/Faqs";
 
 function App() {
   return (
@@ -22,11 +23,15 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/forgot-password" element={<ForgotPassword />}></Route>
-          <Route path="/forgot-password/sucess" element={<CompleteForgotPassword />}></Route>
+          <Route
+            path="/forgot-password/sucess"
+            element={<CompleteForgotPassword />}
+          ></Route>
           <Route path="/password-reset" element={<ResetPassword />}></Route>
           <Route path="/verify-email" element={<VerifyEmail />}></Route>
           <Route path="/terms" element={<Terms />}></Route>
           <Route path="/policy" element={<Policy />}></Route>
+          <Route path="/faqs" element={<Faqs />}></Route>
         </Routes>
       </main>
       <Footer />

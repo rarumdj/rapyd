@@ -2,7 +2,7 @@ import React from "react";
 
 const Terms = () => {
   return (
-    <section className="pb-24 md:pt-32 pt-24 px-6 lg:px-16">
+    <section className="bg-slate-100 pb-24 md:pt-32 pt-24 px-6 lg:px-16">
       <div className="space-y-6 w-full max-w-4xl">
         <h1 className="md:text-4xl text-2xl font-extrabold mb-6">
           Terms Of Service
