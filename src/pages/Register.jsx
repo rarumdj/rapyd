@@ -87,9 +87,9 @@ const Register = () => {
                     </fieldset>
                   </div>
                   <div className="md:mt-10 mt-8">
-                    <button className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold ">
+                    <a type="button" href="verify-email" className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center">
                       Register Account
-                    </button>
+                    </a>
                     <p className="mt-4 text-center md:text-base text-sm">
                       Already Have an Account?{" "}
                       <a href="/login" className="underline text-blue-700">

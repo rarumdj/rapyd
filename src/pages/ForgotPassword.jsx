@@ -56,9 +56,9 @@ const ForgotPassword = () => {
                     </fieldset>
                   </div>
                   <div className="md:mt-10 mt-8">
-                    <button className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold ">
+                    <a type="button" href="/password-reset" className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center">
                       Continue
-                    </button>
+                    </a>
                   </div>
                 </form>
               </div>

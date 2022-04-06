@@ -39,9 +39,9 @@ const CompleteForgotPassword = () => {
                     </div>
                   </div>
                   <div className="md:mt-10 mt-8">
-                    <button className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold ">
+                    <a type="button" href="/login" className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center">
                       Back to Login
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
