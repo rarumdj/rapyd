@@ -3,7 +3,7 @@ import { hashdynamic } from "../../assets/images";
 
 const Contact = () => {
   return (
-    <section className="bg-Contact md:bg-right-top bg-scroll bg-top bg-repeat-y bg-cover mt-36 py-10 px-6 lg:px-16 flex justify-center">
+    <section className="bg-Contact md:bg-right-top bg-scroll bg-top bg-repeat-y bg-cover md:mt-60 mt-0 py-10 px-6 lg:px-16 flex justify-center">
       <div className="flex md:flex-row flex-col gap-6 items-center w-screen max-w-[100rem]">
         <div className="basis-1/3">
           <img src={hashdynamic} alt="" className="object-scale-down h-full w-full" />
