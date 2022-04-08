@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { logo } from "../assets/images";
 import { motion } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -54,16 +55,44 @@ const Navbar = () => {
             <nav className="md:flex hidden lg:space-x-36 space-x-8">
               <ul className="flex flex-row space-x-8 items-center text-white font-semibold lg:text-base text-sm">
                 <li>
-                  <a href="/">About us</a>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="eligibility"
+                    spy={true}
+                    smooth={true}
+                  >
+                    About us
+                  </ScrollLink>
                 </li>
                 <li>
-                  <a href="/">Contact</a>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                  >
+                    Contact
+                  </ScrollLink>
                 </li>
                 <li>
-                  <a href="/">Testimonial</a>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="testimonial"
+                    spy={true}
+                    smooth={true}
+                  >
+                    Testimonial
+                  </ScrollLink>
                 </li>
                 <li>
-                  <a href="/">Our Cars</a>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="ourcar"
+                    spy={true}
+                    smooth={true}
+                  >
+                    Our Cars
+                  </ScrollLink>
                 </li>
               </ul>
               <ul className="flex flex-row space-x-4 items-center lg:text-base text-sm">
@@ -85,18 +114,46 @@ const Navbar = () => {
               <div className="flex flex-col justify-center h-full items-center min-w-full px-8">
                 <div className="space-y-16 w-full max-w-md">
                   <ul className="flex flex-col space-y-10 items-center text-white font-semibold ">
-                    <li>
-                      <a href="/">About us</a>
-                    </li>
-                    <li>
-                      <a href="/">Contact</a>
-                    </li>
-                    <li>
-                      <a href="/">Testimonial</a>
-                    </li>
-                    <li>
-                      <a href="/">Our Cars</a>
-                    </li>
+                  <li>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="eligibility"
+                    spy={true}
+                    smooth={true}
+                  >
+                    About us
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                  >
+                    Contact
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="testimonial"
+                    spy={true}
+                    smooth={true}
+                  >
+                    Testimonial
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="ourcar"
+                    spy={true}
+                    smooth={true}
+                  >
+                    Our Cars
+                  </ScrollLink>
+                </li>
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
                     <li className="h-11 w-full flex justify-center items-center rounded-lg border-2 text-white">
