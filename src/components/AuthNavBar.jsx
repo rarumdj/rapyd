@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import {logoBlue } from "../assets/images";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 const AuthNavBar = () => {
   const [click, setClick] = useState(false);
@@ -64,10 +65,46 @@ const AuthNavBar = () => {
               <div className="flex flex-col justify-center h-full items-center min-w-full px-8">
                 <div className="space-y-16 w-full max-w-md">
                   <ul className="flex flex-col space-y-10 items-center text-white font-semibold">
-                    <li>About us</li>
-                    <li>Contact</li>
-                    <li>Testimonial</li>
-                    <li>Our Cars</li>
+                  <li>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="eligibility"
+                    spy={true}
+                    smooth={true}
+                  >
+                    About us
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                  >
+                    Contact
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="testimonial"
+                    spy={true}
+                    smooth={true}
+                  >
+                    Testimonial
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink
+                    className="cursor-pointer"
+                    to="ourcar"
+                    spy={true}
+                    smooth={true}
+                  >
+                    Our Cars
+                  </ScrollLink>
+                </li>
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
                     <li className="h-11 w-full flex justify-center items-center rounded-lg border-2 text-white">
