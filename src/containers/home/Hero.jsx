@@ -9,7 +9,7 @@ const Hero = () => {
       className="bg-blue-700 pt-20 2xl:h-full lg:h-screen min-h-full"
     >
       <div className="flex flex-col md:flex-row lg:pl-24 items-center">
-        <div className=" space-y-6 md:mt-20 mt-0 lg:mr-8 px-6">
+        <div className="space-y-6 lg:mt-20 sm:mt-10 lg:mr-8 px-6 sm:mb-20 ">
           <h1 className="text-white font-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl">
             It’s your Car <br />
             Own it
