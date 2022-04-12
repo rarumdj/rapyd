@@ -20,10 +20,19 @@ import { useEffect } from "react";
 function App() {
   const location = useLocation();
 
+  const ScrollToTop = () => {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname]);
+
+    return null;
+  };
+
   const DefaultRoutes = () => {
     return (
       <div>
         <Navbar />
+        <ScrollToTop />
         <main>
           <Routes>
             <Route path="/*" element={<Home />}></Route>
