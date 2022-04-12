@@ -154,12 +154,20 @@ const Navbar = () => {
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
                     <li className="h-11 w-full flex justify-center items-center rounded-lg border-2 text-white cursor-pointer">
-                      <NavLink to="/login" onClick={() => setClick(false)}>
+                      <NavLink
+                        className="w-full h-full"
+                        to="/login"
+                        onClick={() => setClick(false)}
+                      >
                         Login
                       </NavLink>
                     </li>
                     <li className="h-11 w-full flex justify-center items-center rounded-lg bg-white text-blue-700 cursor-pointer">
-                      <NavLink to="/register" onClick={() => setClick(false)}>
+                      <NavLink
+                        className="w-full h-full"
+                        to="/register"
+                        onClick={() => setClick(false)}
+                      >
                         Get Started
                       </NavLink>
                     </li>

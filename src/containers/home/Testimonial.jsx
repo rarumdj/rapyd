@@ -49,10 +49,10 @@ const Testimonial = () => {
     spaceBetween: 10,
     loop: true,
     modules: [Pagination, Controller],
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
