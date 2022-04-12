@@ -1,10 +1,51 @@
 import React from "react";
-import { Icon } from "@iconify/react";
 import AuthNavBar from "../components/AuthNavBar";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+import { useForm } from "react-hook-form";
+import Input from "../components/form-input/Input";
+import { motion } from "framer-motion";
 
 const ResetPassword = () => {
+  // form validation rules
+  const validationSchema = Yup.object().shape({
+    password: Yup.string()
+      .min(6, "Password must be at least 6 characters")
+      .required("Password is required")
+      .test("passwordRequirements", "Include (a-z, A-Z, 0-9, @#$)", (value) =>
+        [/[a-z]/, /[A-Z]/, /[0-9]/, /[^a-zA-Z0-9]/].every((pattern) =>
+          pattern.test(value)
+        )
+      ),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref("password"), null], "Passwords must match")
+      .required("Confirm Password is required"),
+  });
+
+  const formOptions = {
+    resolver: yupResolver(validationSchema),
+    mode: "all",
+    reValidateMode: "all",
+    defaultValues: {
+      password: "",
+    },
+    criteriaMode: "firstError",
+    shouldFocusError: true,
+    shouldUnregister: false,
+    shouldUseNativeValidation: false,
+    delayError: undefined,
+  };
+
+  const { register, formState } = useForm(formOptions);
+  const { errors, dirtyFields } = formState;
+
   return (
-    <section className="bg-slate-100 min-h-screen">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+      exit={{ opacity: 0, transition: { duration: 0.7 } }}
+      className="bg-slate-100 min-h-screen"
+    >
       <div className="flex lg:flex-row flex-col">
         <div className="basis-[45%] hidden min-h-screen h-[916px] w-full bg-Onboarding bg-cover bg-no-repeat lg:flex pl-16 pr-12 pb-12">
           <div className="rounded-lg px-10 py-4 mt-auto bg-blue-700 mx-auto">
@@ -25,37 +66,21 @@ const ResetPassword = () => {
                 </h1>
                 <form className="w-11/12 max-w-md h-full">
                   <div className="space-y-5">
-                    <fieldset className="border border-solid rounded-xl border-gray-300 px-3 h-16 relative">
-                      <legend className="md:text-base text-sm px-2 md:leading-none leading-none">
-                        Password
-                      </legend>
-                      <input
-                        type="text"
-                        className="w-full outline-none pl-2 pr-6 h-full focus:outline-none text-gray-400 text-sm"
-                      />
-                      <Icon
-                        icon={"carbon:view-filled"}
-                        fontSize={20}
-                        color="000"
-                        className="absolute inset-y-0 right-0 m-3"
-                      />
-                    </fieldset>
+                    <Input
+                      error={errors.password}
+                      dirtyField={dirtyFields.password}
+                      formHook={register("password", { required: true })}
+                      name={"Password"}
+                      inputType={"passoword"}
+                    />
 
-                    <fieldset className="border border-solid rounded-xl border-gray-300 px-3 h-16 relative">
-                      <legend className="md:text-base text-sm px-2 md:leading-none leading-none">
-                        Confirm Password
-                      </legend>
-                      <input
-                        type="text"
-                        className="w-full outline-none pl-2 pr-6 h-full focus:outline-none text-gray-400 text-sm"
-                      />
-                      <Icon
-                        icon={"carbon:view-filled"}
-                        fontSize={20}
-                        color="000"
-                        className="absolute inset-y-0 right-0 m-3"
-                      />
-                    </fieldset>
+                    <Input
+                      error={errors.confirmPassword}
+                      dirtyField={dirtyFields.confirmPassword}
+                      formHook={register("confirmPassword", { required: true })}
+                      name={"Confirm Password"}
+                      inputType={"passoword"}
+                    />
                   </div>
                   <div className="mt-3">
                     <p className="text-gray-600 md:text-base text-sm">
@@ -64,7 +89,11 @@ const ResetPassword = () => {
                     </p>
                   </div>
                   <div className="md:mt-10 mt-8">
-                    <a type="button" href="/forgot-password/success" className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center">
+                    <a
+                      type="button"
+                      href="/forgot-password/success"
+                      className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center"
+                    >
                       Reset Password
                     </a>
                   </div>
@@ -74,7 +103,7 @@ const ResetPassword = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

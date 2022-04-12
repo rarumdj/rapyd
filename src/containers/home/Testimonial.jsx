@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SwiperCore, { Controller, Autoplay } from "swiper";
-import { slide1 } from "../../assets/images";
+import { anthony, james, lazarus, lucky, sunday } from "../../assets/images";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -17,31 +17,27 @@ const Testi = [
   but the exceptional service and ease of getting a car from
   Rapyd was amazing. I look forward to the day I'll have the
   original documents as I already own this car in my mind.`,
-    imgSrc: slide1,
+    imgSrc: james,
   },
   {
-    name: "Kenedy James",
-    para: `2I have been driving as a commercial driver for over 5 years
-  but the exceptional service and ease of getting a car from
-  Rapyd was amazing. I look forward to the day I'll have the
-  original documents as I already own this car in my mind.`,
-    imgSrc: slide1,
+    name: "Anthony",
+    para: `My experience with Rapyd has left me with nothing but a grateful heart. This is more than a business for me, Rapyd Cars empowered me to achieve my personal goals. Thank you Rapyd Cars.`,
+    imgSrc: anthony,
   },
   {
-    name: "Kenedy James",
-    para: `3I have been driving as a commercial driver for over 5 years
-  but the exceptional service and ease of getting a car from
-  Rapyd was amazing. I look forward to the day I'll have the
-  original documents as I already own this car in my mind.`,
-    imgSrc: slide1,
+    name: "Sunday",
+    para: `Sometimes I have the impression that Rapyd is not a Nigerian company because of how fast and excellent their services are. The amount of concern they have for their Driver is highly commendable and I am more than grateful to be on this journey to own my own car. Thank you Rapyd.`,
+    imgSrc: sunday,
   },
   {
-    name: "Kenedy James",
-    para: `4I have been driving as a commercial driver for over 5 years
-  but the exceptional service and ease of getting a car from
-  Rapyd was amazing. I look forward to the day I'll have the
-  original documents as I already own this car in my mind.`,
-    imgSrc: slide1,
+    name: "Lucky",
+    para: `I feel like my name was what I experienced with Rapyd Cars. I feel so Lucky to be associated with a company like Rapyd Cars. Thank Rapyd for this opportunity to be my own Boss. `,
+    imgSrc: lucky,
+  },
+  {
+    name: "Lazarus",
+    para: `Rapyd cars was my saviour after the ugly experience I had during the pandemic. I enjoyed the best of treatment as a driver that any organization has ever given to me. `,
+    imgSrc: lazarus,
   },
 ];
 const Testimonial = () => {
@@ -53,10 +49,10 @@ const Testimonial = () => {
     spaceBetween: 10,
     loop: true,
     modules: [Pagination, Controller],
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -65,7 +61,10 @@ const Testimonial = () => {
   };
 
   return (
-    <section id="testimonial" className="py-20 lg:pl-24 md:pl-8 md:p-0 p-6 flex justify-center ">
+    <section
+      id="testimonial"
+      className="py-20 lg:pl-24 md:pl-8 md:p-0 p-6 flex justify-center "
+    >
       <div className="w-full max-w-[100rem]">
         <h1 className="text-4xl font-extrabold mt-16">Testimonials</h1>
 

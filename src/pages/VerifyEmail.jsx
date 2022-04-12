@@ -2,10 +2,16 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import { MailPng } from "../assets/images";
 import AuthNavBar from "../components/AuthNavBar";
+import { motion } from "framer-motion";
 
 const VerifyEmail = () => {
   return (
-    <section className="bg-slate-100 min-h-screen">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+      exit={{ opacity: 0, transition: { duration: 0.7 } }}
+      className="bg-slate-100 min-h-screen"
+    >
       <div className="flex lg:flex-row flex-col">
         <div className="basis-[45%] hidden min-h-screen h-[916px] w-full bg-Onboarding bg-cover bg-no-repeat lg:flex pl-16 pr-12 pb-12">
           <div className="rounded-lg px-10 py-4 mt-auto bg-blue-700 mx-auto">
@@ -97,7 +103,7 @@ const VerifyEmail = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

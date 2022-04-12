@@ -1,10 +1,16 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { Thumbsup } from "../assets/images";
 import AuthNavBar from "../components/AuthNavBar";
 
 const CompleteForgotPassword = () => {
   return (
-    <section className="bg-slate-100 min-h-screen">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+      exit={{ opacity: 0, transition: { duration: 0.7 } }}
+      className="bg-slate-100 min-h-screen"
+    >
       <div className="flex lg:flex-row flex-col">
         <div className="basis-[45%] hidden min-h-screen h-[916px] w-full bg-Onboarding bg-cover bg-no-repeat lg:flex pl-16 pr-12 pb-12">
           <div className="rounded-lg px-10 py-4 mt-auto bg-blue-700 mx-auto">
@@ -39,7 +45,11 @@ const CompleteForgotPassword = () => {
                     </div>
                   </div>
                   <div className="md:mt-10 mt-8">
-                    <a type="button" href="/login" className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center">
+                    <a
+                      type="button"
+                      href="/login"
+                      className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center"
+                    >
                       Back to Login
                     </a>
                   </div>
@@ -49,7 +59,7 @@ const CompleteForgotPassword = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

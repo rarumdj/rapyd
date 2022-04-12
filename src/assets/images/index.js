@@ -6,7 +6,6 @@ export { default as carhero } from "./car-hero.png";
 export { default as hondacivic } from "./Honda-civic.png";
 export { default as patternsingle } from "./pattern-single.svg";
 export { default as righteligibility } from "./right-eligibility.png";
-export { default as slide1 } from "./slide1.png";
 export { default as toyotacam03 } from "./toyota-cam-03.png";
 export { default as toyotacorolla } from "./toyota-corolla.png";
 export { default as toyotamatrix } from "./toyota-matrix.png";
@@ -15,3 +14,9 @@ export { default as Onboarding } from "./Onboarding-SideAd.jpg";
 export { default as Shield } from "./sheild-dynamic-color.png";
 export { default as MailPng } from "./mail-dynamic-color.png";
 export { default as Thumbsup } from "./thumb-up-dynamic-color.png";
+export { default as james } from "./james.png";
+export { default as lucky } from "./lucky.png";
+export { default as anthony } from "./anthony.png";
+export { default as lazarus } from "./lazarus.png";
+export { default as sunday } from "./sunday.png";
+

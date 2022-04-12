@@ -2,10 +2,42 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import { Shield } from "../assets/images";
 import AuthNavBar from "../components/AuthNavBar";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+import { useForm } from "react-hook-form";
+import Input from "../components/form-input/Input";
+import { motion } from "framer-motion";
 
 const ForgotPassword = () => {
+  // form validation rules
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().required("Email is required").email("Email is invalid"),
+  });
+
+  const formOptions = {
+    resolver: yupResolver(validationSchema),
+    mode: "all",
+    reValidateMode: "all",
+    defaultValues: {
+      email: "",
+    },
+    criteriaMode: "firstError",
+    shouldFocusError: true,
+    shouldUnregister: false,
+    shouldUseNativeValidation: false,
+    delayError: undefined,
+  };
+
+  const { register, formState } = useForm(formOptions);
+  const { errors, dirtyFields } = formState;
+
   return (
-    <section className="bg-slate-100 min-h-screen">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+      exit={{ opacity: 0, transition: { duration: 0.7 } }}
+      className="bg-slate-100 min-h-screen"
+    >
       <div className="flex lg:flex-row flex-col">
         <div className="basis-[45%] hidden min-h-screen h-[916px] w-full bg-Onboarding bg-cover bg-no-repeat lg:flex pl-16 pr-12 pb-12">
           <div className="rounded-lg px-10 py-4 mt-auto bg-blue-700 mx-auto">
@@ -45,18 +77,20 @@ const ForgotPassword = () => {
                 </div>
                 <form className="w-11/12 max-w-md h-full">
                   <div className="space-y-5">
-                    <fieldset className="border border-solid rounded-xl border-gray-300 px-3 h-16">
-                      <legend className="md:text-base text-sm px-2 md:leading-none leading-none">
-                        Email Address
-                      </legend>
-                      <input
-                        type="text"
-                        className="w-full outline-none pl-2 pr-6 h-full focus:outline-none text-gray-400 text-sm"
-                      />
-                    </fieldset>
+                    <Input
+                      error={errors.email}
+                      dirtyField={dirtyFields.email}
+                      formHook={register("email", { required: true })}
+                      name={"Email Address"}
+                      inputType={"email"}
+                    />
                   </div>
                   <div className="md:mt-10 mt-8">
-                    <a type="button" href="/password-reset" className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center">
+                    <a
+                      type="button"
+                      href="/password-reset"
+                      className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center"
+                    >
                       Continue
                     </a>
                   </div>
@@ -66,7 +100,7 @@ const ForgotPassword = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

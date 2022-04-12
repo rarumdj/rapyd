@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { logo } from "../assets/images";
 import { motion } from "framer-motion";
-import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -38,7 +37,9 @@ const Navbar = () => {
     <header className="bg-blue-700 py-4 px-6 lg:py-4 lg:px-16 fixed top-0 left-0 right-0 z-50 flex justify-center">
       <nav className="flex flex-row justify-between items-center w-screen max-w-[110rem]">
         <div className="z-50">
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
         </div>
         <div>
           <button
@@ -55,52 +56,52 @@ const Navbar = () => {
             <nav className="md:flex hidden lg:space-x-36 space-x-8">
               <ul className="flex flex-row space-x-8 items-center text-white font-semibold lg:text-base text-sm">
                 <li>
-                  <ScrollLink
+                  <a
                     className="cursor-pointer"
-                    to="eligibility"
-                    spy={true}
-                    smooth={true}
+                    href="#eligibility"
+                    onClick={() => setClick(false)}
                   >
                     About us
-                  </ScrollLink>
+                  </a>
                 </li>
                 <li>
-                  <ScrollLink
+                  <a
                     className="cursor-pointer"
-                    to="contact"
-                    spy={true}
-                    smooth={true}
+                    href="#contact"
+                    onClick={() => setClick(false)}
                   >
                     Contact
-                  </ScrollLink>
+                  </a>
                 </li>
                 <li>
-                  <ScrollLink
+                  <a
                     className="cursor-pointer"
-                    to="testimonial"
-                    spy={true}
-                    smooth={true}
+                    href="#testimonial"
+                    onClick={() => setClick(false)}
                   >
                     Testimonial
-                  </ScrollLink>
+                  </a>
                 </li>
                 <li>
-                  <ScrollLink
+                  <a
                     className="cursor-pointer"
-                    to="ourcar"
-                    spy={true}
-                    smooth={true}
+                    href="#ourcar"
+                    onClick={() => setClick(false)}
                   >
                     Our Cars
-                  </ScrollLink>
+                  </a>
                 </li>
               </ul>
               <ul className="flex flex-row space-x-4 items-center lg:text-base text-sm">
                 <li className=" h-11 px-6 flex items-center rounded-lg border-2 text-white font-semibold">
-                  <Link to="/login">Login</Link>
+                  <Link to="/login" onClick={() => setClick(false)}>
+                    Login
+                  </Link>
                 </li>
                 <li className="h-11 px-6 flex items-center rounded-lg text-center bg-white text-blue-700 font-semibold">
-                  <Link to="/register">Get Started</Link>
+                  <Link to="/register" onClick={() => setClick(false)}>
+                    Get Started
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -114,53 +115,53 @@ const Navbar = () => {
               <div className="flex flex-col justify-center h-full items-center min-w-full px-8">
                 <div className="space-y-16 w-full max-w-md">
                   <ul className="flex flex-col space-y-10 items-center text-white font-semibold ">
-                  <li>
-                  <ScrollLink
-                    className="cursor-pointer"
-                    to="eligibility"
-                    spy={true}
-                    smooth={true}
-                  >
-                    About us
-                  </ScrollLink>
-                </li>
-                <li>
-                  <ScrollLink
-                    className="cursor-pointer"
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                  >
-                    Contact
-                  </ScrollLink>
-                </li>
-                <li>
-                  <ScrollLink
-                    className="cursor-pointer"
-                    to="testimonial"
-                    spy={true}
-                    smooth={true}
-                  >
-                    Testimonial
-                  </ScrollLink>
-                </li>
-                <li>
-                  <ScrollLink
-                    className="cursor-pointer"
-                    to="ourcar"
-                    spy={true}
-                    smooth={true}
-                  >
-                    Our Cars
-                  </ScrollLink>
-                </li>
+                    <li>
+                      <a
+                        className="cursor-pointer"
+                        href="#eligibility"
+                        onClick={() => setClick(false)}
+                      >
+                        About us
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="cursor-pointer"
+                        href="#contact"
+                        onClick={() => setClick(false)}
+                      >
+                        Contact
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="cursor-pointer"
+                        href="#testimonial"
+                        onClick={() => setClick(false)}
+                      >
+                        Testimonial
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="cursor-pointer"
+                        href="#ourcar"
+                        onClick={() => setClick(false)}
+                      >
+                        Our Cars
+                      </a>
+                    </li>
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
                     <li className="h-11 w-full flex justify-center items-center rounded-lg border-2 text-white">
-                      <Link to="/login">Login</Link>
+                      <Link to="/login" onClick={() => setClick(false)}>
+                        Login
+                      </Link>
                     </li>
                     <li className="h-11 w-full flex justify-center items-center rounded-lg bg-white text-blue-700">
-                      <Link to="/register">Get Started</Link>
+                      <Link to="/register" onClick={() => setClick(false)}>
+                        Get Started
+                      </Link>
                     </li>
                   </ul>
                 </div>

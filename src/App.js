@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -14,12 +14,25 @@ import ResetPassword from "./pages/ResetPassword";
 import Terms from "./pages/Terms";
 import Policy from "./pages/Policy";
 import Faqs from "./pages/Faqs";
+import { AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 function App() {
+  const location = useLocation();
+
+  const ScrollToTop = () => {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname]);
+
+    return null;
+  };
+
   const DefaultRoutes = () => {
     return (
       <div>
         <Navbar />
+        <ScrollToTop />
         <main>
           <Routes>
             <Route path="/*" element={<Home />}></Route>
@@ -35,18 +48,20 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/*" element={<DefaultRoutes />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/forgot-password" element={<ForgotPassword />}></Route>
-        <Route
-          path="/forgot-password/success"
-          element={<CompleteForgotPassword />}
-        ></Route>
-        <Route path="/password-reset" element={<ResetPassword />}></Route>
-        <Route path="/verify-email" element={<VerifyEmail />}></Route>
-      </Routes>
+      <AnimatePresence>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/*" element={<DefaultRoutes />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+          <Route
+            path="/forgot-password/success"
+            element={<CompleteForgotPassword />}
+          ></Route>
+          <Route path="/password-reset" element={<ResetPassword />}></Route>
+          <Route path="/verify-email" element={<VerifyEmail />}></Route>
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }

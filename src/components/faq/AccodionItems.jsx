@@ -6,7 +6,11 @@ const AccodionItems = ({ faq, active, onToggle }) => {
   const contentEl = useRef();
   return (
     <div>
-      <div className="space-y-4 w-full p-6 rounded-lg shadow-lg shadow-slate-300/60 bg-white">
+      <div
+        className={`${
+          active ? "space-y-4" : ""
+        } w-full p-6 rounded-lg shadow-lg shadow-slate-300/60 bg-white`}
+      >
         <div className="flex" onClick={onToggle}>
           <h5 className={`md:text-xl text-lg ${active ? " font-bold" : ""}`}>
             {question}

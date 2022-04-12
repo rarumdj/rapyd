@@ -1,10 +1,64 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import AuthNavBar from "../components/AuthNavBar";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+import { useForm } from "react-hook-form";
+import Input from "../components/form-input/Input";
+import { motion } from "framer-motion";
 
 const Register = () => {
+  // form validation rules
+  const validationSchema = Yup.object().shape({
+    firstName: Yup.string().required("First Name is required"),
+    lastName: Yup.string().required("Last name is required"),
+    phone: Yup.string()
+      .min(11, "Phone must be at least 11 characters")
+      .required("Phone number is required"),
+    email: Yup.string().required("Email is required").email("Email is invalid"),
+    password: Yup.string()
+      .min(6, "Password must be at least 6 characters")
+      .required("Password is required")
+      .test("passwordRequirements", "Include (a-z, A-Z, 0-9, @#$)", (value) =>
+        [/[a-z]/, /[A-Z]/, /[0-9]/, /[^a-zA-Z0-9]/].every((pattern) =>
+          pattern.test(value)
+        )
+      ),
+  });
+
+  const formOptions = {
+    resolver: yupResolver(validationSchema),
+    mode: "all",
+    reValidateMode: "all",
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      password: "",
+    },
+    criteriaMode: "firstError",
+    shouldFocusError: true,
+    shouldUnregister: false,
+    shouldUseNativeValidation: false,
+    delayError: undefined,
+  };
+
+  const { register, handleSubmit, formState } = useForm(formOptions);
+  const { errors, dirtyFields } = formState;
+
+  // function onSubmit(data) {
+  //   // display form data on success
+  //   alert("SUCCESS!! :-)\n\n" + JSON.stringify(data, null, 4));
+  //   return true;
+  // }
   return (
-    <section className="bg-slate-100 min-h-screen">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1, transition: { duration: 0.7 } }}
+      exit={{ opacity: 0, transition: { duration: 0.7 } }}
+      className="bg-slate-100 min-h-screen"
+    >
       <div className="flex lg:flex-row flex-col">
         <div className="basis-[45%] hidden min-h-screen h-[916px] w-full bg-Onboarding bg-cover bg-no-repeat lg:flex pl-16 pr-12 pb-12">
           <div className="rounded-lg px-10 py-4 mt-auto bg-blue-700 mx-auto">
@@ -33,66 +87,61 @@ const Register = () => {
                   Register for Rapyd as a Driver
                 </h1>
                 <form className="w-11/12 max-w-md h-full">
-                  <div className="space-y-5">
-                    <fieldset className="border border-solid rounded-xl border-gray-300 px-3 h-16">
-                      <legend className="md:text-base text-sm px-2 md:leading-none leading-none">
-                        Firstname
-                      </legend>
-                      <input
-                        type="text"
-                        className="w-full outline-none pl-2 pr-6 h-full focus:outline-none text-gray-400 text-sm"
-                      />
-                    </fieldset>
-                    <fieldset className="border border-solid rounded-xl border-gray-300 px-3 h-16">
-                      <legend className="md:text-base text-sm px-2 md:leading-none leading-none">
-                        Lastname
-                      </legend>
-                      <input
-                        type="text"
-                        className="w-full outline-none pl-2 pr-6 h-full focus:outline-none text-gray-400 text-sm"
-                      />
-                    </fieldset>
-                    <fieldset className="border border-solid rounded-xl border-gray-300 px-3 h-16">
-                      <legend className="md:text-base text-sm px-2 md:leading-none leading-none">
-                        Email Address
-                      </legend>
-                      <input
-                        type="text"
-                        className="w-full outline-none pl-2 pr-6 h-full focus:outline-none text-gray-400 text-sm"
-                      />
-                    </fieldset>
-                    <fieldset className="border border-solid rounded-xl border-gray-300 px-3 h-16">
-                      <legend className="md:text-base text-sm px-2 md:leading-none leading-none">
-                        Phone Number
-                      </legend>
-                      <input
-                        type="text"
-                        className="w-full outline-none pl-2 pr-6 h-full focus:outline-none text-gray-400 text-sm"
-                      />
-                    </fieldset>
-                    <fieldset className="border border-solid rounded-xl border-gray-300 px-3 h-16 relative">
-                      <legend className="md:text-base text-sm px-2 md:leading-none leading-none">
-                        Password
-                      </legend>
-                      <input
-                        type="text"
-                        className="w-full outline-none pl-2 pr-6 h-full focus:outline-none text-gray-400 text-sm"
-                      />
-                      <Icon
-                        icon={"carbon:view-filled"}
-                        fontSize={20}
-                        color="000"
-                        className="absolute inset-y-0 right-0 m-3"
-                      />
-                    </fieldset>
+                  <div className="space-y-6">
+                    <Input
+                      error={errors.firstName}
+                      dirtyField={dirtyFields.firstName}
+                      formHook={register("firstName", { required: true })}
+                      name={"Firstname"}
+                      inputType={"text"}
+                    />
+
+                    <Input
+                      error={errors.lastName}
+                      dirtyField={dirtyFields.lastName}
+                      formHook={register("lastName", { required: true })}
+                      name={"Lastname"}
+                      inputType={"text"}
+                    />
+
+                    <Input
+                      error={errors.phone}
+                      dirtyField={dirtyFields.phone}
+                      formHook={register("phone", { required: true })}
+                      name={"Phone Number"}
+                      inputType={"tel"}
+                    />
+
+                    <Input
+                      error={errors.email}
+                      dirtyField={dirtyFields.email}
+                      formHook={register("email", { required: true })}
+                      name={"Email Address"}
+                      inputType={"email"}
+                    />
+
+                    <Input
+                      error={errors.password}
+                      dirtyField={dirtyFields.password}
+                      formHook={register("password", { required: true })}
+                      name={"Password"}
+                      inputType={"passoword"}
+                    />
                   </div>
                   <div className="md:mt-10 mt-8">
-                    <a type="button" href="verify-email" className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center">
+                    <button
+                      type="submit"
+                      // href="verify-email"
+                      className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold text-center"
+                    >
                       Register Account
-                    </a>
+                    </button>
                     <p className="mt-4 text-center md:text-base text-sm">
                       Already Have an Account?{" "}
-                      <a href="/login" className="underline text-blue-700">
+                      <a
+                        href="/login"
+                        className="underline text-blue-700 font-bold"
+                      >
                         Login
                       </a>
                     </p>
@@ -103,7 +152,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

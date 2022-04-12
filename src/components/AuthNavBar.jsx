@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import {logoBlue } from "../assets/images";
+import { logoBlue } from "../assets/images";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll";
 
 const AuthNavBar = () => {
   const [click, setClick] = useState(false);
@@ -38,11 +37,13 @@ const AuthNavBar = () => {
     <header className="lg:bg-transparent bg-white py-4 px-6 lg:py-4 lg:px-16 lg:static fixed top-0 w-full z-50 ">
       <nav className="flex flex-row justify-between items-center">
         <div className="z-50">
-          <img
-            src={logoBlue}
-            alt="logo"
-            className="object-scale-down lg:w-full w-20 "
-          />
+          <Link to="/">
+            <img
+              src={logoBlue}
+              alt="logo"
+              className="object-scale-down lg:w-full w-20 "
+            />
+          </Link>
         </div>
         <div>
           <button
@@ -65,46 +66,42 @@ const AuthNavBar = () => {
               <div className="flex flex-col justify-center h-full items-center min-w-full px-8">
                 <div className="space-y-16 w-full max-w-md">
                   <ul className="flex flex-col space-y-10 items-center text-white font-semibold">
-                  <li>
-                  <ScrollLink
-                    className="cursor-pointer"
-                    to="eligibility"
-                    spy={true}
-                    smooth={true}
-                  >
-                    About us
-                  </ScrollLink>
-                </li>
-                <li>
-                  <ScrollLink
-                    className="cursor-pointer"
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                  >
-                    Contact
-                  </ScrollLink>
-                </li>
-                <li>
-                  <ScrollLink
-                    className="cursor-pointer"
-                    to="testimonial"
-                    spy={true}
-                    smooth={true}
-                  >
-                    Testimonial
-                  </ScrollLink>
-                </li>
-                <li>
-                  <ScrollLink
-                    className="cursor-pointer"
-                    to="ourcar"
-                    spy={true}
-                    smooth={true}
-                  >
-                    Our Cars
-                  </ScrollLink>
-                </li>
+                    <li>
+                      <a
+                        className="cursor-pointer"
+                        href="/#eligibility"
+                        onClick={() => setClick(false)}
+                      >
+                        About us
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="cursor-pointer"
+                        href="/#contact"
+                        onClick={() => setClick(false)}
+                      >
+                        Contact
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="cursor-pointer"
+                        href="/#testimonial"
+                        onClick={() => setClick(false)}
+                      >
+                        Testimonial
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="cursor-pointer"
+                        href="/#ourcar"
+                        onClick={() => setClick(false)}
+                      >
+                        Our Cars
+                      </a>
+                    </li>
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
                     <li className="h-11 w-full flex justify-center items-center rounded-lg border-2 text-white">
