@@ -44,7 +44,7 @@ const Register = () => {
     delayError: undefined,
   };
 
-  const { register, handleSubmit, formState } = useForm(formOptions);
+  const { register, formState } = useForm(formOptions);
   const { errors, dirtyFields } = formState;
 
   // function onSubmit(data) {
