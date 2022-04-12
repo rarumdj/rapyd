@@ -75,7 +75,7 @@ const Input = ({ error, dirtyField, formHook, name, inputType }) => {
             className="w-full outline-none pl-2 pr-12 h-full focus:outline-none text-gray-400 "
           />
           <Icon
-            icon={passwordShown ? "carbon:view" : "carbon:view-off"}
+            icon={passwordShown ? "carbon:view-off" : "carbon:view"}
             fontSize={20}
             className="absolute inset-y-0 right-0 m-3"
             onClick={togglePassword}
