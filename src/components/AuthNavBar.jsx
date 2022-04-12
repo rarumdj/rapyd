@@ -104,13 +104,13 @@ const AuthNavBar = () => {
                     </li>
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
-                    <li className="h-11 w-full flex justify-center items-center rounded-lg border-2 text-white cursor-pointer">
-                      <NavLink className="w-full h-full" to="/login">
+                    <li className="h-11 w-full rounded-lg border-2 text-white cursor-pointer">
+                      <NavLink className="w-full h-full flex justify-center items-center" to="/login">
                         Login
                       </NavLink>
                     </li>
-                    <li className="h-11 w-full flex justify-center items-center rounded-lg bg-white text-blue-700 cursor-pointer">
-                      <NavLink className="w-full h-full" to="/register">
+                    <li className="h-11 w-full rounded-lg bg-white text-blue-700 cursor-pointer">
+                      <NavLink className="w-full h-full flex justify-center items-center " to="/register">
                         Get Started
                       </NavLink>
                     </li>
