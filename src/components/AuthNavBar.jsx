@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { logoBlue } from "../assets/images";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const AuthNavBar = () => {
   const [click, setClick] = useState(false);
@@ -105,10 +105,10 @@ const AuthNavBar = () => {
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
                     <li className="h-11 w-full flex justify-center items-center rounded-lg border-2 text-white cursor-pointer">
-                      <Link to="/login">Login</Link>
+                      <NavLink to="/login">Login</NavLink>
                     </li>
                     <li className="h-11 w-full flex justify-center items-center rounded-lg bg-white text-blue-700 cursor-pointer">
-                      <Link to="/register">Get Started</Link>
+                      <NavLink to="/register">Get Started</NavLink>
                     </li>
                   </ul>
                 </div>

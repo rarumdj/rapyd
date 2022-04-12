@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { logo } from "../assets/images";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -154,14 +154,14 @@ const Navbar = () => {
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
                     <li className="h-11 w-full flex justify-center items-center rounded-lg border-2 text-white cursor-pointer">
-                      <Link to="/login" onClick={() => setClick(false)}>
+                      <NavLink to="/login" onClick={() => setClick(false)}>
                         Login
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="h-11 w-full flex justify-center items-center rounded-lg bg-white text-blue-700 cursor-pointer">
-                      <Link to="/register" onClick={() => setClick(false)}>
+                      <NavLink to="/register" onClick={() => setClick(false)}>
                         Get Started
-                      </Link>
+                      </NavLink>
                     </li>
                   </ul>
                 </div>
