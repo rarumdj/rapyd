@@ -24,7 +24,6 @@ function App() {
     return (
       <div>
         <Navbar />
-        <ScrollToTop />
         <main>
           <Routes>
             <Route path="/*" element={<Home />}></Route>
