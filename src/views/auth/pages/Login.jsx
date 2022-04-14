@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
-import Input from "../../../components/form-input/Input";
+import Input from "../components/form-input/Input";
 import { motion } from "framer-motion";
 import AuthNavBar from "../components/AuthNavBar";
 import SideAd from "../containers/SideAd";

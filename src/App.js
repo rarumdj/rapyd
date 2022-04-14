@@ -5,18 +5,16 @@ import "swiper/css/bundle";
 
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
-import Navbar from "./views/landing/components/Navbar";
-import Footer from "./views/landing/components/Footer";
-import Home from "./views/landing/pages/Home";
-import Faqs from "./views/landing/pages/Faqs";
-import Policy from "./views/landing/pages/Policy";
-import Terms from "./views/landing/pages/Terms";
-import Register from "./views/auth/pages/Register";
-import Login from "./views/auth/pages/Login";
-import ForgotPassword from "./views/auth/pages/ForgotPassword";
-import CompleteForgotPassword from "./views/auth/pages/CompleteForgotPassword";
-import VerifyEmail from "./views/auth/pages/VerifyEmail";
-import ResetPassword from "./views/auth/pages/ResetPassword";
+import { Navbar, Footer } from "./views/landing/components";
+import { Home, Faqs, Policy, Terms } from "./views/landing/pages";
+import {
+  Login,
+  Register,
+  ForgotPassword,
+  CompleteForgotPassword,
+  VerifyEmail,
+  ResetPassword,
+} from "./views/auth/pages";
 
 function App() {
   const location = useLocation();
@@ -46,12 +44,10 @@ function App() {
     );
   };
 
-  return (
-    <div className="App">
-      <AnimatePresence>
-        <ScrollToTop />
-        <Routes location={location} key={location.pathname}>
-          <Route path="/*" element={<DefaultRoutes />}></Route>
+  const AuthRoute = () => {
+    return (
+      <>
+        <Routes>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/forgot-password" element={<ForgotPassword />}></Route>
@@ -61,6 +57,18 @@ function App() {
           ></Route>
           <Route path="/password-reset" element={<ResetPassword />}></Route>
           <Route path="/verify-email" element={<VerifyEmail />}></Route>
+        </Routes>
+      </>
+    );
+  };
+
+  return (
+    <div className="App">
+      <AnimatePresence>
+        <ScrollToTop />
+        <Routes location={location} key={location.pathname}>
+          <Route path="/*" element={<DefaultRoutes />}></Route>
+          <Route path="/" element={<AuthRoute />}></Route>
         </Routes>
       </AnimatePresence>
     </div>
