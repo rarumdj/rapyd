@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import { logo } from "../assets/images";
 import { motion } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
+import { logo } from "../../../assets/images";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -93,13 +93,21 @@ const Navbar = () => {
                 </li>
               </ul>
               <ul className="flex flex-row space-x-4 items-center lg:text-base text-sm">
-                <li className=" h-11 px-6 flex items-center rounded-lg border-2 text-white font-semibold">
-                  <Link to="/login" onClick={() => setClick(false)}>
+                <li className=" h-11 rounded-lg border-2 text-white font-semibold">
+                  <Link
+                    className="px-6 w-full h-full flex justify-center items-center"
+                    to="/login"
+                    onClick={() => setClick(false)}
+                  >
                     Login
                   </Link>
                 </li>
-                <li className="h-11 px-6 flex items-center rounded-lg text-center bg-white text-blue-700 font-semibold">
-                  <Link to="/register" onClick={() => setClick(false)}>
+                <li className="h-11 rounded-lg text-center bg-white text-blue-700 font-semibold">
+                  <Link
+                    className="px-6 w-full h-full flex justify-center items-center"
+                    to="/register"
+                    onClick={() => setClick(false)}
+                  >
                     Get Started
                   </Link>
                 </li>

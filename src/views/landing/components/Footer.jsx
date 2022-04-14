@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import { logo } from "../assets/images";
 import { Link, NavLink } from "react-router-dom";
+import { logo } from "../../../assets/images";
 
 const Footer = () => {
   return (

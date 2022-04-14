@@ -1,8 +1,9 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import { MailPng } from "../assets/images";
 import AuthNavBar from "../components/AuthNavBar";
 import { motion } from "framer-motion";
+import { MailPng } from "../../../assets/images";
+import SideAd from "../containers/SideAd";
 
 const VerifyEmail = () => {
   return (
@@ -13,13 +14,7 @@ const VerifyEmail = () => {
       className="bg-slate-100 min-h-screen"
     >
       <div className="flex lg:flex-row flex-col">
-        <div className="basis-[45%] hidden min-h-screen h-[916px] w-full bg-Onboarding bg-cover bg-no-repeat lg:flex pl-16 pr-12 pb-12">
-          <div className="rounded-lg px-10 py-4 mt-auto bg-blue-700 mx-auto">
-            <p className="md:text-lg text-sm font-bold text-white text-center">
-              Get Some of the Best Cars For your Business with affordable Rate
-            </p>
-          </div>
-        </div>
+        <SideAd />
         <div className="basis-[55%]">
           <div className="flex">
             <AuthNavBar />
@@ -39,9 +34,9 @@ const VerifyEmail = () => {
                 <img
                   src={MailPng}
                   alt="shield"
-                  className="h-auto max-w-full object-scale-down my-3"
+                  className="h-auto max-w-full object-scale-down my-2"
                 />
-                <div className="space-y-1 mb-6 w-11/12 max-w-md">
+                <div className="space-y-1 mb-4 w-11/12 max-w-md">
                   <h1 className="lg:text-3xl md:text-2xl text-xl font-bold">
                     Verify Email{" "}
                   </h1>
@@ -83,7 +78,7 @@ const VerifyEmail = () => {
                         className="border border-solid rounded-lg border-gray-300 p-2 md:h-14 md:w-14 h-10 w-10 outline-none focus:outline-none text-gray-400 text-xl font-bold text-center"
                       />
                     </div>
-                    <p className="md:text-base text-sm text-gray-600">
+                    <p className="text-sm text-gray-600">
                       An email has been sent to johndoe@gmail.com with a code to
                       verify your account.
                       <br />
@@ -92,10 +87,15 @@ const VerifyEmail = () => {
                       please check your spam.
                     </p>
                   </div>
-                  <div className="md:mt-10 mt-8">
+                  <div className="md:mt-5 mt-6">
                     <button className="bg-blue-700 p-3 rounded-xl w-full text-white md:text-xl text-lg font-bold ">
                       Verify
                     </button>
+                    <p className="mt-4 text-center md:text-base text-sm">
+                      <a href="/" className="underline text-blue-700 font-bold">
+                        Resend Email
+                      </a>
+                    </p>
                   </div>
                 </form>
               </div>

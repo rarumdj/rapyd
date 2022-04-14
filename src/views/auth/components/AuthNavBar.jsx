@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import { logoBlue } from "../assets/images";
 import { motion } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
+import { logoBlue } from "../../../assets/images";
 
 const AuthNavBar = () => {
   const [click, setClick] = useState(false);

@@ -1,21 +1,22 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Register from "./pages/Register";
 import "./App.css";
 // eslint-disable-next-line
 import "swiper/css/bundle";
-import Login from "./pages/Login";
-import ForgotPassword from "./pages/ForgotPassword";
-import VerifyEmail from "./pages/VerifyEmail";
-import CompleteForgotPassword from "./pages/CompleteForgotPassword";
-import ResetPassword from "./pages/ResetPassword";
-import Terms from "./pages/Terms";
-import Policy from "./pages/Policy";
-import Faqs from "./pages/Faqs";
+
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import Navbar from "./views/landing/components/Navbar";
+import Footer from "./views/landing/components/Footer";
+import Home from "./views/landing/pages/Home";
+import Faqs from "./views/landing/pages/Faqs";
+import Policy from "./views/landing/pages/Policy";
+import Terms from "./views/landing/pages/Terms";
+import Register from "./views/auth/pages/Register";
+import Login from "./views/auth/pages/Login";
+import ForgotPassword from "./views/auth/pages/ForgotPassword";
+import CompleteForgotPassword from "./views/auth/pages/CompleteForgotPassword";
+import VerifyEmail from "./views/auth/pages/VerifyEmail";
+import ResetPassword from "./views/auth/pages/ResetPassword";
 
 function App() {
   const location = useLocation();
@@ -32,7 +33,6 @@ function App() {
     return (
       <div>
         <Navbar />
-        <ScrollToTop />
         <main>
           <Routes>
             <Route path="/*" element={<Home />}></Route>
@@ -49,6 +49,7 @@ function App() {
   return (
     <div className="App">
       <AnimatePresence>
+        <ScrollToTop />
         <Routes location={location} key={location.pathname}>
           <Route path="/*" element={<DefaultRoutes />}></Route>
           <Route path="/register" element={<Register />}></Route>

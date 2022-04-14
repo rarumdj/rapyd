@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { Thumbsup } from "../assets/images";
+import { Thumbsup } from "../../../assets/images";
 import AuthNavBar from "../components/AuthNavBar";
+import SideAd from "../containers/SideAd";
 
 const CompleteForgotPassword = () => {
   return (
@@ -12,13 +13,7 @@ const CompleteForgotPassword = () => {
       className="bg-slate-100 min-h-screen"
     >
       <div className="flex lg:flex-row flex-col">
-        <div className="basis-[45%] hidden min-h-screen h-[916px] w-full bg-Onboarding bg-cover bg-no-repeat lg:flex pl-16 pr-12 pb-12">
-          <div className="rounded-lg px-10 py-4 mt-auto bg-blue-700 mx-auto">
-            <p className="md:text-lg text-sm font-bold text-white text-center">
-              Get Some of the Best Cars For your Business with affordable Rate
-            </p>
-          </div>
-        </div>
+        <SideAd />
         <div className="basis-[55%]">
           <div className="flex">
             <AuthNavBar />

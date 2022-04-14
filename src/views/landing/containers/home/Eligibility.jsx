@@ -1,5 +1,5 @@
 import React from "react";
-import { righteligibility } from "../../assets/images";
+import { righteligibility } from "../../../../assets/images";
 
 const Eligibility = () => {
   return (
