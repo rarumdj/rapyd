@@ -44,10 +44,13 @@ function App() {
     );
   };
 
-  const AuthRoute = () => {
-    return (
-      <>
-        <Routes>
+
+  return (
+    <div className="App">
+      <AnimatePresence>
+        <ScrollToTop />
+        <Routes location={location} key={location.pathname}>
+          <Route path="/*" element={<DefaultRoutes />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/forgot-password" element={<ForgotPassword />}></Route>
@@ -57,18 +60,6 @@ function App() {
           ></Route>
           <Route path="/password-reset" element={<ResetPassword />}></Route>
           <Route path="/verify-email" element={<VerifyEmail />}></Route>
-        </Routes>
-      </>
-    );
-  };
-
-  return (
-    <div className="App">
-      <AnimatePresence>
-        <ScrollToTop />
-        <Routes location={location} key={location.pathname}>
-          <Route path="/*" element={<DefaultRoutes />}></Route>
-          <Route path="/" element={<AuthRoute />}></Route>
         </Routes>
       </AnimatePresence>
     </div>
