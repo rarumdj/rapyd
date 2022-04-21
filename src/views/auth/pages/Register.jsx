@@ -4,7 +4,7 @@ import AuthNavBar from "../components/AuthNavBar";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useForm } from "react-hook-form";
-import Input from "../components/form-input/Input";
+import Input from "../../../components/form-input/Input";
 import { motion } from "framer-motion";
 import SideAd from "../containers/SideAd";
 
@@ -58,16 +58,16 @@ const Register = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.7 } }}
       exit={{ opacity: 0, transition: { duration: 0.7 } }}
-      className="bg-slate-100 min-h-screen"
+      className="min-h-screen overflow-x-clip bg-slate-100"
     >
-      <div className="flex lg:flex-row flex-col">
+      <div className="flex lg:flex-row flex-col min-h-screen">
         <SideAd />
-        <div className="basis-[55%]">
+        <div className="basis-[55%] min-h-screen">
           <div className="flex">
             <AuthNavBar />
           </div>
           <div className="lg:pl-16 sm:px-10 px-4 lg:pr-24 py-8 space-y-8 lg:mt-0 mt-14">
-            <div className="bg-white rounded-2xl xl:px-16 lg:px-8 px-4 xl:py-10 py-8 flex flex-col items-center justify-center">
+            <div className="bg-white rounded-2xl xl:px-16 lg:px-8 px-4 xl:py-16  py-8 flex flex-col items-center justify-center">
               <div className="w-full">
                 <a href="/login" className="inline-flex items-center mb-10">
                   <Icon
