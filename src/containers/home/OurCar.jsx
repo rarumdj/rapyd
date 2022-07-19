@@ -4,7 +4,7 @@ import {
   toyotacam03,
   toyotacorolla,
   toyotamatrix,
-} from "../../../../assets/images";
+} from "../../assets/images";
 
 const OurCar = () => {
   return (

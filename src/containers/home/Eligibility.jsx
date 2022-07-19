@@ -1,5 +1,5 @@
 import React from "react";
-import { righteligibility } from "../../../../assets/images";
+import { righteligibility } from "../../assets/images";
 
 const Eligibility = () => {
   return (
@@ -55,7 +55,7 @@ const Eligibility = () => {
               </li>
             </ul>
           </div>
-          <p>Please visit the <a href="/" className="text-blue-700 underline font-bold">FAQ</a> page to get more information…</p>
+          <p>Please visit the <a href="/faqs" className="text-blue-700 underline font-bold">FAQ</a> page to get more information…</p>
         </div>
         <div className="basis-1/2 ml-auto mt-8">
           <img src={righteligibility} alt="hero_banner" className="" />

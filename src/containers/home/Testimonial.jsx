@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SwiperCore, { Controller, Autoplay } from "swiper";
-import { anthony, james, lazarus, lucky, sunday } from "../../../../assets/images";
+import { anthony, james, lazarus, lucky, sunday } from "../../assets/images";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
-import { Link, NavLink } from "react-router-dom";
-import { logo } from "../../../assets/images";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { logo } from "../assets/images";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const handleClick = () => {
     setClick(!click);
   };
@@ -33,19 +34,25 @@ const Navbar = () => {
     },
   };
 
+  const handleNavClick = () => {
+    if (pathname !== "/") navigate("/");
+    setClick(false);
+
+    return;
+  };
+
   return (
     <header className="bg-blue-700 py-4 px-6 lg:py-4 lg:px-16 fixed top-0 left-0 right-0 z-50 flex justify-center">
       <nav className="flex flex-row justify-between items-center w-screen max-w-[110rem]">
         <div className="z-50">
-          <Link to="/">
+          <a href="/#home">
             <img src={logo} alt="" />
-          </Link>
+          </a>
         </div>
         <div>
           <button
             className="-translate-y-4 -translate-x-8 md:hidden block absolute z-50"
-            onClick={handleClick}
-          >
+            onClick={handleClick}>
             <Icon
               icon={click ? "ep:close" : "charm:menu-hamburger"}
               fontSize={30}
@@ -59,8 +66,7 @@ const Navbar = () => {
                   <a
                     className="cursor-pointer"
                     href="#eligibility"
-                    onClick={() => setClick(false)}
-                  >
+                    onClick={handleNavClick}>
                     About us
                   </a>
                 </li>
@@ -68,8 +74,7 @@ const Navbar = () => {
                   <a
                     className="cursor-pointer"
                     href="#contact"
-                    onClick={() => setClick(false)}
-                  >
+                    onClick={handleNavClick}>
                     Contact
                   </a>
                 </li>
@@ -77,8 +82,7 @@ const Navbar = () => {
                   <a
                     className="cursor-pointer"
                     href="#testimonial"
-                    onClick={() => setClick(false)}
-                  >
+                    onClick={handleNavClick}>
                     Testimonial
                   </a>
                 </li>
@@ -86,30 +90,27 @@ const Navbar = () => {
                   <a
                     className="cursor-pointer"
                     href="#ourcar"
-                    onClick={() => setClick(false)}
-                  >
+                    onClick={handleNavClick}>
                     Our Cars
                   </a>
                 </li>
               </ul>
               <ul className="flex flex-row space-x-4 items-center lg:text-base text-sm">
                 <li className=" h-11 rounded-lg border-2 text-white font-semibold">
-                  <Link
+                  <a
                     className="px-6 w-full h-full flex justify-center items-center"
-                    to="/login"
-                    onClick={() => setClick(false)}
-                  >
+                    href="https://dashboard.rapydcars.com/login"
+                    onClick={handleNavClick}>
                     Login
-                  </Link>
+                  </a>
                 </li>
                 <li className="h-11 rounded-lg text-center bg-white text-blue-700 font-semibold">
-                  <Link
+                  <a
                     className="px-6 w-full h-full flex justify-center items-center"
-                    to="/register"
-                    onClick={() => setClick(false)}
-                  >
+                    href="https://dashboard.rapydcars.com/register"
+                    onClick={handleNavClick}>
                     Get Started
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -118,8 +119,7 @@ const Navbar = () => {
               initial={false}
               animate={click ? "open" : "closed"}
               variants={variants}
-              className={`md:hidden block bg-blue-700 absolute top-0 left-0 right-0 bottom-0 min-h-screen`}
-            >
+              className={`md:hidden block bg-blue-700 absolute top-0 left-0 right-0 bottom-0 min-h-screen`}>
               <div className="flex flex-col justify-center h-full items-center min-w-full px-8">
                 <div className="space-y-16 w-full max-w-md">
                   <ul className="flex flex-col space-y-10 items-center text-white font-semibold ">
@@ -127,8 +127,7 @@ const Navbar = () => {
                       <a
                         className="cursor-pointer"
                         href="#eligibility"
-                        onClick={() => setClick(false)}
-                      >
+                        onClick={handleNavClick}>
                         About us
                       </a>
                     </li>
@@ -136,8 +135,7 @@ const Navbar = () => {
                       <a
                         className="cursor-pointer"
                         href="#contact"
-                        onClick={() => setClick(false)}
-                      >
+                        onClick={handleNavClick}>
                         Contact
                       </a>
                     </li>
@@ -145,8 +143,7 @@ const Navbar = () => {
                       <a
                         className="cursor-pointer"
                         href="#testimonial"
-                        onClick={() => setClick(false)}
-                      >
+                        onClick={handleNavClick}>
                         Testimonial
                       </a>
                     </li>
@@ -154,30 +151,27 @@ const Navbar = () => {
                       <a
                         className="cursor-pointer"
                         href="#ourcar"
-                        onClick={() => setClick(false)}
-                      >
+                        onClick={handleNavClick}>
                         Our Cars
                       </a>
                     </li>
                   </ul>
                   <ul className="flex flex-col space-y-4 items-center min-w-full font-semibold">
                     <li className="h-11 w-full rounded-lg border-2 text-white cursor-pointer">
-                      <NavLink
+                      <a
                         className="w-full h-full flex justify-center items-center"
-                        to="/login"
-                        onClick={() => setClick(false)}
-                      >
+                        href="https://dashboard.rapydcars.com/login"
+                        onClick={handleNavClick}>
                         Login
-                      </NavLink>
+                      </a>
                     </li>
                     <li className="h-11 w-full rounded-lg bg-white text-blue-700 cursor-pointer">
-                      <NavLink
+                      <a
                         className="w-full h-full flex justify-center items-center"
-                        to="/register"
-                        onClick={() => setClick(false)}
-                      >
+                        href="https://dashboard.rapydcars.com/register"
+                        onClick={handleNavClick}>
                         Get Started
-                      </NavLink>
+                      </a>
                     </li>
                   </ul>
                 </div>
